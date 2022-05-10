@@ -1,0 +1,13 @@
+
+  
+  /* Safari <8 and IE <11 */
+  @media screen and (max-width: 992px) {
+    .navt { font-size: 40px !important; }
+    
+  }
+  
+ #root
+ {
+   min-height:max-content;
+   background-color:#F6F6F6;
+ }
