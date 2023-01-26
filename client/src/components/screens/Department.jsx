@@ -14,6 +14,7 @@ function Department() {
     const [data, setData] = useState([]);
     const [showCom, setCom] = useState();
     const { state, dispatch } = useContext(UserContext);
+    const navigate = useNavigate();
     const {dept}=useParams();
     
     function changeshow(e) {
@@ -145,10 +146,15 @@ function Department() {
             }
         }).then(res => res.json())
             .then(result => {
- 
+                if (result.error) {
+                    navigate('/login');
+                    return;
+                   }
                 
                 setData(result.posts);
-            })
+            }).catch(err => {
+                navigate('/login');
+         })
     }, [])
     return (
 

@@ -79,6 +79,9 @@ function Login() {
          <h6>
              <Link to='/signup'>don't have account?</Link>
          </h6>
+         <h6>
+             <Link to='/reset'>forgot password?</Link>
+         </h6>
          </div>
          </Card>
   

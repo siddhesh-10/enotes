@@ -163,11 +163,17 @@ function UserProfile()
         }).then(res => res.json())
             .then(result => {
 
-               
+                if (result.error) {
+                    navigate('/login');
+                    return;
+                   }
                  setUser(result.user)
                 setData(result.posts);
                
             })
+            .catch(err => {
+                navigate('/login');
+         })
     }, [])
     return (
         <>

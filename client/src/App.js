@@ -4,7 +4,7 @@
       BrowserRouter ,
       Routes ,
       Route,
-      Link
+      useLocation
     } from "react-router-dom";
 
     import './App.css';
@@ -22,13 +22,15 @@
     import Search from './components/screens/Search';
     import Departmennt from './components/screens/Department';
     import Subject from './components/screens/Subject';
+    import Reset from './components/screens/Reset';
+    import Newpassword from './components/screens/Newpassword';
    import {reducer,initialState} from './reducers/userReducer.js'
 
    export const UserContext = createContext();
 
 const Routing=()=>{
   const navigate = useNavigate();
- 
+  const location = useLocation();
   
   const {state,dispatch}=useContext(UserContext);
   const user = JSON.parse(localStorage.getItem("user"));
@@ -41,7 +43,12 @@ const Routing=()=>{
     }
     else
     {
-      navigate('/login');
+      console.log("hyr");
+      console.log(location.pathname);
+     if(!location.pathname.startsWith('/reset'))
+       navigate('/login')
+    
+      
     }
   },[]);
 
@@ -51,14 +58,22 @@ const Routing=()=>{
     <Route path="/" element={<Window />}></Route>
     <Route path="/login" element={<Login />}></Route>
     <Route path="/signup" element={<Signup />}></Route>
+    
+    {/* <Route path="/reset/:token">
+        <Newpassword />
+      </Route> */}
+      <Route  path={`reset/:token`}  exact={true} element={<Newpassword />}></Route>
+      <Route  path="/reset" exact={true} element={<Reset />}></Route>
     <>
     <Route  path={`profile/:userId`}  exact={true} element={<UserProfile />}></Route>
     <Route  path={`search/:dept`}  exact={true} element={<Departmennt />}></Route>
     <Route  path={`searchs/:sub`}  exact={true} element={<Subject />}></Route>
+    
     <Route exact path="/profile"  element={<Profile />}></Route>
-    <Route exact path="/home" element={<Home />}></Route>
+    <Route exact path="/home"  element={<Home />}></Route>
     <Route path="/createpost" element={<CreatePost />}></Route>
     <Route path="/search" element={<Search />}></Route>
+    
     
     
 

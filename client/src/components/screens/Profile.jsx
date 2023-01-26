@@ -263,6 +263,7 @@ function Profile() {
             })
     }
     useEffect(() => {
+        console.log("kkk");
         fetch('/mypost', {
             headers: {
 

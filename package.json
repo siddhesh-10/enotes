@@ -1,0 +1,24 @@
+{
+  "name": "enotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/app.js",
+  "dependencies": {
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd ./server && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddhesh-10/enotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siddhesh-10/enotes/issues"
+  },
+  "homepage": "https://github.com/siddhesh-10/enotes#readme"
+}

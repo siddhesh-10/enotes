@@ -164,11 +164,17 @@ function Subject()
         }).then(res => res.json())
             .then(result => {
 
-               
+                if (result.error) {
+                    navigate('/login');
+                    return;
+                   }
                 
                 setData(result.posts);
                
             })
+            .catch(err => {
+                navigate('/login');
+         })
     }, [])
     return (
         <>

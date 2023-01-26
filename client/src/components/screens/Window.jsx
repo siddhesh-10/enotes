@@ -21,7 +21,12 @@ useEffect(() => {
         <div>
             <Navbars/>
             <div className="homeimage">
-            
+            <div className="window">
+             <h2>
+                 enotes a social media app to download others notes and upload notes.
+             </h2>
+             
+            </div>
             
              </div>
         </div>
