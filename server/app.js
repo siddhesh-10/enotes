@@ -25,7 +25,7 @@ console.log("error while connecting to mongo",error)
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://enotes-kit.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Origin', 'https://enotes-v71e.onrender.com/');
     res.setHeader('Access-Control-Allow-Origin', '*');
     
     // Request methods you wish to allow
