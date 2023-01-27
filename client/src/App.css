@@ -319,7 +319,7 @@ margin-right: auto;
  background-image: url("https://source.unsplash.com/qy27JnsH9sU/200x400");
  margin: 1% 2%;
 
-}
+} 
 .dp3
 {
   color: #FA7D09 !important;
@@ -358,4 +358,12 @@ margin-right: auto;
 {
     color: #21209C;
     text-decoration-line: underline; 
+}
+.pdfbtn
+{
+    z-index: -1 !important;
+}
+.bnavbar
+{
+    z-index: +1 !important;
 }
