@@ -227,17 +227,21 @@ function Home() {
                                             <SinglePage pdf={item.url} />
                                         </div>
                                     </div>
-
+                                    <hr></hr>
                                     {/* <Card.Header>{item.title}</Card.Header> */}
                                     <Card.Body>
-                                        <Card.Title>{item.title}</Card.Title>
-                                        <Card.Title className="subjectpost">subject : {item.subject}</Card.Title>
+                                        <Card.Title className="postTitle">{item.title}</Card.Title>
+                                        <div className="postContent">
+                                        <Card.Text className="subjectpost">subject : {item.subject}</Card.Text>
+                                        
                                         <Card.Text className="deppost">
                                             Department:{item.department}
                                         </Card.Text>
+                                        </div>
                                         <Card.Text>
                                             {item.desc}
                                         </Card.Text>
+                                        
 
                                         <Button onClick={() => {
                                             saveAs(

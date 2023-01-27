@@ -63,16 +63,19 @@ export default function SinglePage(props) {
                     <Document className="viewers" file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
                     <Page pageNumber={pageNumber} />
                     </Document>
-                    <p>
-                        Page {pageNumber} of {numPages}
-                    </p>
+                    <div className="pdfhandler">
+                    
                     <div className="pdfbtn">
                         <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={npage}>
                             next
                         </button>
+                        <p className="btn pagenum">
+                        Page {pageNumber} of {numPages}
+                       </p>
                         <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={ppage}>
                             prev
                         </button>
+                     </div>
                      </div>
                         {/* <Page pageNumber={pageNumber} /> */}
                     {/* <Document
