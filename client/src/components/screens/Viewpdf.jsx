@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { render } from 'react-dom';
+import React, { useState, useRef, useEffect } from 'react';
+import throttle from 'lodash/throttle';
 import { Document, Page, pdfjs } from 'react-pdf';
-
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 // import {ReactPDF, Document, Page } from 'react-pdf';
 
@@ -14,6 +14,23 @@ export default function SinglePage(props) {
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
+    const [initialWidth, setInitialWidth] = useState(null);
+    const pdfWrapper = useRef(null);
+
+    const setPdfSize = () => {
+      if (pdfWrapper && pdfWrapper.current) {
+        setInitialWidth(pdfWrapper.current.getBoundingClientRect().width);
+      }
+    };
+    
+    useEffect(() => {
+      window.addEventListener('resize', throttle(setPdfSize, 3000));
+      setPdfSize();
+      return () => {
+        window.removeEventListener('resize', throttle(setPdfSize, 3000));
+      };
+    }, []);
+
     function ppage() {
         if (pageNumber <= 1) {
 
@@ -60,24 +77,29 @@ export default function SinglePage(props) {
             // );
             return (
                 <div className="viewer">
-                    <Document className="viewers" file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} />
-                    </Document>
-                    <div className="pdfhandler">
                     
-                    <div className="pdfbtn">
-                        <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={npage}>
-                            next
-                        </button>
-                        <p className="btn pagenum">
-                        Page {pageNumber} of {numPages}
-                       </p>
-                        <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={ppage}>
-                            prev
-                        </button>
-                     </div>
-                     </div>
-                        {/* <Page pageNumber={pageNumber} /> */}
+                        <div id="placeholderWrapper" style={{ height: 'fit-content' }} />
+                        <div id="pdfWrapper" ref={pdfWrapper}>
+                            <Document className="viewers" file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
+                                <Page  pageNumber={pageNumber} loading="loadingggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg" />
+                            </Document>
+                        </div>
+                    
+                    <div className="pdfhandler">
+
+                        <div className="pdfbtn">
+                            <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={npage}>
+                                next
+                            </button>
+                            <p className="btn pagenum">
+                                Page {pageNumber} of {numPages}
+                            </p>
+                            <button className="btn waves-effect waves-light #66bb6a green lighten-1" onClick={ppage}>
+                                prev
+                            </button>
+                        </div>
+                    </div>
+                    {/* <Page pageNumber={pageNumber} /> */}
                     {/* <Document
                         file={pdf}
                         className="viewers"

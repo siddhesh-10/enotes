@@ -114,7 +114,7 @@ function CreatePost() {
   }
 
   return (
-    <div className="post-area" >
+    <div className="postNote" >
 
       <Card className="post-card">
         {/* <h6>unknown</h6>
@@ -134,8 +134,8 @@ function CreatePost() {
               <input type="text" className="postinput" placeholder="Subject" maxLength={25} value={subject} onChange={(e) => setSubject(e.target.value)}></input>
               {/* <input type="text" className="postinput" placeholder="Department" value={department} onChange={(e) => setDepartment(e.target.value)}></input> */}
               <div className="postinput">
-                select department
-                <Select className="postinput dep"
+               <h4> select department</h4>
+                <Select className="postinput deps"
                   options={options}
                   value={department}
                   onChange={handledep}

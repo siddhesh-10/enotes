@@ -41,7 +41,7 @@ nav.navbar { position: initial;}
 }
 .item
 {
-   /* width: 30%; */
+   width: 30%;
    
 }
     
@@ -70,7 +70,7 @@ nav.navbar { position: initial;}
     height: max-content;
     margin:26px auto;
     justify-content:space-around;
-    background-color: #FC92E3 !important;
+    background-color: orange !important;
 }
 .post-area
 {
@@ -96,12 +96,18 @@ nav.navbar { position: initial;}
 {
     width: 100% !important;
 }
-
+.input-field
+{
+    background-color: rgb(213, 179, 116) !important;
+}
 .postinput
 {
-   position: relative !important;
-   margin-top: 1% !important;
-   padding-top: 2px;
+   
+   margin-top:5px !important;
+   background-color: white !important;
+   border: 1px  black  !important;
+   border-style: solid !important;
+   border-radius: 15px !important;
     
 }
 .btn 
@@ -113,7 +119,7 @@ nav.navbar { position: initial;}
 {
     background-color: #F9F9F9 !important;
 }
-.dep
+.deps
 {
    
        margin-bottom: 15px !important;
@@ -160,6 +166,7 @@ nav.navbar { position: initial;}
     justify-content: center !important;
     border: 1px 0px black;
     border-style: solid !important;
+    min-height: 40% !important;
     border-color:black !important;
 }
 .bottom-nav
