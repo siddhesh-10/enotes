@@ -122,8 +122,6 @@ nav.navbar { position: initial;}
 .bnavbar
 {
 
-position:sticky !important;
-margin-bottom: 1px !important;
 }
 .adjust
 {
@@ -163,6 +161,21 @@ margin-bottom: 1px !important;
     border: 1px 0px black;
     border-style: solid !important;
     border-color:black !important;
+}
+.bottom-nav
+{
+    
+    max-width: 100% !important;
+}
+@media (max-width: 480px) {
+    .bottom-nav
+    {
+        
+        width: 400px !important;
+        position: relative;
+        left: 0% !important;
+        
+    }
 }
 .pdfbtn
 {

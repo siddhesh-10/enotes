@@ -74,7 +74,6 @@ const bottomNavItems = [
         <BottomNavigation
           items={bottomNavItems}
           Selected={selected}
-          style={{maxWidth:"100%"}}
           onItemClick={(item) =>{
             setSelected(item.id)
             

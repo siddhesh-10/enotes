@@ -323,6 +323,7 @@ function Home() {
                     }
                     <hr></hr>
                     <h2>...loading</h2>
+                    <div className="nearnav"></div>
                     <Bnavbar />
                 </div>
 
