@@ -41,7 +41,7 @@ nav.navbar { position: initial;}
 }
 .item
 {
-    width: 30%;
+   /* width: 30%; */
    
 }
     
@@ -171,11 +171,17 @@ nav.navbar { position: initial;}
     .bottom-nav
     {
         
-        width: 400px !important;
+        width:60% !important; 
         position: relative;
-        left: 0% !important;
-        
+        display: inline-block;
+        left: 0% !important; 
+        left: 0;
+        right: 0;
     }
+}
+.nearnav
+{
+    justify-content: center !important;
 }
 .pdfbtn
 {
