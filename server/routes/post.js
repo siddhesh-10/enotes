@@ -55,7 +55,7 @@ router.post('/post',requirelogin,(req,res)=>{
       console.log(error);
   })
 })
-router.post('/createpost', requirelogin, (req, res) => {
+router.post('/createposts', requirelogin, (req, res) => {
     console.log("inserver");
     try {
         const {title,subject,desc,url,department}=req.body;
@@ -85,7 +85,7 @@ router.post('/createpost', requirelogin, (req, res) => {
       }
     });
 
-router.get('/home',requirelogin,(req,res)=>{
+router.get('/homes',requirelogin,(req,res)=>{
     console.log("in home")
     Post.find().populate('postedBy','_id name url')
     .populate("comments.postedBy","_id name url")

@@ -77,7 +77,7 @@ function CreatePost() {
                     url: urls
                   })
                 };
-                fetch('/createpost', requestOptions)
+                fetch('/createposts', requestOptions)
                   .then(res => res.json())
                   .then(data => {
                     JSON.stringify(data)

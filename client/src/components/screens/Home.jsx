@@ -176,9 +176,7 @@ function Home() {
     useEffect(() => {
         
       
-        fetch('/home', {
-           
-
+        fetch('/homes', {
             headers: {
                 
                 "Authorization": "Bearer " + localStorage.getItem('jwt')
